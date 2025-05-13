@@ -11,9 +11,13 @@ models:
           - not_null
           - unique
       - name: customer_name
-        description: Full name of the customer.
+        description: Full name of the customer. NO ONE CAN SEE THIS COLUMN.
+        policy_tags:
+          - '{{ var("policy_tags")["strict_policy_tag"] }}'
       - name: count_lifetime_orders
-        description: Total number of orders placed by the customer.
+        description: Total number of orders placed by the customer. ONLY VISIBLE TO ADMIN.
+        policy_tags:
+          - '{{ var("policy_tags")["relaxed_policy_tag"] }}'
       - name: first_ordered_at
         description: Timestamp of the first order placed by the customer.
       - name: last_ordered_at

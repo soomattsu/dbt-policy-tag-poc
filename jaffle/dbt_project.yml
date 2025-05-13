@@ -22,6 +22,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+# Variables declaration
+vars:
+  policy_tags:
+    strict_policy_tag: "projects/stable-403101/locations/asia-northeast1/taxonomies/6040293104269219898/policyTags/3203856475967858503"
+    relaxed_policy_tag: "projects/stable-403101/locations/asia-northeast1/taxonomies/6040293104269219898/policyTags/8038451950638831438"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -36,3 +41,6 @@ models:
       +materialized: view
     mart:
       +materialized: table
+      +persist_docs:
+        relation: true
+        columns: true
