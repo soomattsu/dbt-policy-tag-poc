@@ -1,0 +1,16 @@
+models:
+  - name: if___test_jaffle_shop___order_items
+    description: Individual food and drink items that make up our orders, one row per item.
+    columns:
+      - name: order_item_id
+        description: Unique identifier for each order item.
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: Corresponding order each order item belongs to.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('if___test_jaffle_shop___orders')
+              field: order_id

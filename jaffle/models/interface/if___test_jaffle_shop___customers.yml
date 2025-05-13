@@ -1,0 +1,9 @@
+models:
+  - name: if___test_jaffle_shop___customers
+    description: Customer data with basic cleaning and transformation applied, one row per customer.
+    columns:
+      - name: customer_id
+        description: Unique key for each customer
+        data_tests:
+          - not_null
+          - unique

@@ -1,0 +1,9 @@
+models:
+  - name: if___test_jaffle_shop___products
+    description: Product (food and drink iterms that can be ordered) data with basic cleaning and transformation applied, one row per Product
+    columns:
+      - name: product_id
+        description: unique key for each product
+        data_tests:
+          - unique
+          - not_null
